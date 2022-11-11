@@ -6,6 +6,7 @@ var context;
 
 
 
+
 //snake head
 var snakeX = blockSize * 5;
 var snakeY = blockSize * 5;
@@ -14,6 +15,13 @@ var velocityX = 0;
 var velocityY = 0;
 
 var snakeBody = [];
+
+var music = new Howl({
+    src: [
+        "https://assets.codepen.io/21542/howler-demo-bg-music.mp3"
+    ],
+    loop: true,
+})
 
 //food
 var foodX;
@@ -28,6 +36,14 @@ window.onload = function () {
     context = board.getContext("2d"); //used for drawing on the board
 
     placeFood();
+    document.querySelector(".play-music").addEventListener("click", () => {
+        if (!music.playing()) {
+        music.play();
+        }
+    })
+    document.querySelector(".stop-music").addEventListener("click", () => { music.stop()});
+    
+    // music.play();
     document.addEventListener("keyup", changeDirection);
     // update();
     setInterval(update, 1000 / 10); //100 milliseconds
@@ -37,13 +53,13 @@ function update() {
     if (gameOver) {
         return;
     }
-    
+
     context.fillStyle = "black";
     context.fillRect(0, 0, board.width, board.height);
-    
+
     context.fillStyle = "red";
     context.fillRect(foodX, foodY, blockSize, blockSize);
-    
+
     if (snakeX == foodX && snakeY == foodY) {
         snakeBody.push([foodX, foodY]);
         placeFood();
@@ -55,7 +71,7 @@ function update() {
     if (snakeBody.length) {
         snakeBody[0] = [snakeX, snakeY];
     }
-    
+
     context.fillStyle = "lime";
     snakeX += velocityX * blockSize;
     snakeY += velocityY * blockSize;
@@ -65,16 +81,16 @@ function update() {
     }
 
     //game over conditions
-    if (snakeX < 0 || snakeX > cols * blockSize -1 || snakeY < 0 || snakeY > rows * blockSize -1) {
+    if (snakeX < 0 || snakeX > cols * blockSize - 1 || snakeY < 0 || snakeY > rows * blockSize - 1) {
         gameOver = true;
         return window.location.assign('end.html')
     }
-    
+
     for (let i = 0; i < snakeBody.length; i++) {
         if (snakeX == snakeBody[i][0] && snakeY == snakeBody[i][1]) {
             gameOver = true;
-            return window.location.assign('end.html')
-            
+
+
         }
     }
 }
@@ -104,4 +120,7 @@ function placeFood() {
     foodX = Math.floor(Math.random() * cols) * blockSize;
     foodY = Math.floor(Math.random() * rows) * blockSize;
 }
+
+
+
 

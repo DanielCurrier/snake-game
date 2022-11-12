@@ -2,6 +2,7 @@ var username = document.getElementById('username');
 var saveScoreBtn = document.getElementById('saveScoreBtn');
 var finalScore = document.getElementById('finalScore');
 var mostRecentScore = localStorage.getItem('mostRecentScore');
+var snakerating = document.getElementById('snakeRating');
 
 const maxHighScores = 5;
 
@@ -21,8 +22,6 @@ function saveHighScore(event) {
         score: mostRecentScore,
         name: username.value,
     };
-
-    console.log(score.name);
 
 
     highScores.push(score);

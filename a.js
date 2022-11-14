@@ -45,7 +45,7 @@ window.onload = function () {
             music.play();
         }
     })
-    document.querySelector(".stop-music").addEventListener("click", () => { music.stop() });
+    document.querySelector(".stop-music").addEventListener("click", () => { music.stop()});
 
     music.play();
 

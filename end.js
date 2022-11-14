@@ -36,7 +36,7 @@ function saveHighScore(event) {
 };
 
 function wikiPrint() {
-    if (mostRecentScore <= 20) {
+    if (mostRecentScore >= 20) {
         wikiPage = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Garter_Snake&origin=*'
         wikiTitle = 'Garter Snake'
 
@@ -66,24 +66,24 @@ function wikiPrint() {
         wikiTitle = 'Texas Coral Snake'
 
     };
-    if (mostRecentScore >= 180) {
+    if (mostRecentScore >= 200) {
         wikiPage = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Black_mamba&origin=*'
         wikiTitle = 'Black Mamba'
     };
 
-    if (mostRecentScore >= 200) {
+    if (mostRecentScore >= 220) {
         wikiPage = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Green_anaconda&origin=*'
         wikiTitle = 'Green Anaconda'
     };
-    if (mostRecentScore >= 220) {
+    if (mostRecentScore >= 250) {
         wikiPage = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=King_cobra&origin=*'
         wikiTitle = 'King Cobra'
     };
-    if (mostRecentScore >= 250) {
+    if (mostRecentScore >= 280) {
         wikiPage = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Reticulated_python&origin=*'
         wikiTitle = 'Reticulated Python'
     };
-    if (mostRecentScore >= 280) {
+    if (mostRecentScore >= 300) {
         wikiPage = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Titanoboa&origin=*'
         wikiTitle = 'Titanoboa'
     };

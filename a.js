@@ -4,7 +4,10 @@ var cols = 20;
 var board;
 var context;
 
-
+// Scoring system variables
+var score = 0;
+const snakeGrowScore = 10;
+const scoreText = document.getElementById('score');
 
 
 //snake head
@@ -23,6 +26,7 @@ var music = new Howl({
     loop: true,
 })
 
+
 //food
 var foodX;
 var foodY;
@@ -38,12 +42,13 @@ window.onload = function () {
     placeFood();
     document.querySelector(".play-music").addEventListener("click", () => {
         if (!music.playing()) {
-        music.play();
+            music.play();
         }
     })
-    document.querySelector(".stop-music").addEventListener("click", () => { music.stop()});
-    
-    
+    document.querySelector(".stop-music").addEventListener("click", () => { music.stop() });
+
+    music.play();
+
     document.addEventListener("keyup", changeDirection);
     // update();
     setInterval(update, 1000 / 10); //100 milliseconds
@@ -63,6 +68,7 @@ function update() {
     if (snakeX == foodX && snakeY == foodY) {
         snakeBody.push([foodX, foodY]);
         placeFood();
+        updateScore(snakeGrowScore);
     }
 
     for (let i = snakeBody.length - 1; i > 0; i--) {
@@ -83,16 +89,20 @@ function update() {
     //game over conditions
     if (snakeX < 0 || snakeX > cols * blockSize - 1 || snakeY < 0 || snakeY > rows * blockSize - 1) {
         gameOver = true;
+        localStorage.setItem('mostRecentScore', score);
         return window.location.assign('end.html')
     }
 
     for (let i = 0; i < snakeBody.length; i++) {
         if (snakeX == snakeBody[i][0] && snakeY == snakeBody[i][1]) {
             gameOver = true;
-
+            localStorage.setItem('mostRecentScore', score);
+            return window.location.assign('end.html')
 
         }
     }
+
+    
 }
 
 function changeDirection(e) {
@@ -122,5 +132,9 @@ function placeFood() {
 }
 
 
+function updateScore(num) {
+    score += num;
+    scoreText.innerText = score;
+}
 
 

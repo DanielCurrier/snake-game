@@ -43,7 +43,7 @@ window.onload = function () {
     })
     document.querySelector(".stop-music").addEventListener("click", () => { music.stop()});
     
-    // music.play();
+    
     document.addEventListener("keyup", changeDirection);
     // update();
     setInterval(update, 1000 / 10); //100 milliseconds

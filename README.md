@@ -20,6 +20,7 @@ If you would like to see your score along with other players on your local devic
 
 If you would like to see what is under the hood, use Chrome DevTools to inspect the page.
 
+Here is a link to our program: https://lorddanklin.github.io/snake-game/
 ## Credits 
 LordDanklin
 Team Leader/ all around git expert

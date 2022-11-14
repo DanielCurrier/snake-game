@@ -26,6 +26,7 @@ var music = new Howl({
     loop: true,
 })
 
+
 //food
 var foodX;
 var foodY;
@@ -44,9 +45,11 @@ window.onload = function () {
             music.play();
         }
     })
-    document.querySelector(".stop-music").addEventListener("click", () => { music.stop() });
 
-    // music.play();
+    document.querySelector(".stop-music").addEventListener("click", () => { music.stop()});
+
+    music.play();
+
     document.addEventListener("keyup", changeDirection);
     // update();
     setInterval(update, 1000 / 10); //100 milliseconds
@@ -94,10 +97,13 @@ function update() {
     for (let i = 0; i < snakeBody.length; i++) {
         if (snakeX == snakeBody[i][0] && snakeY == snakeBody[i][1]) {
             gameOver = true;
-
+            localStorage.setItem('mostRecentScore', score);
+            return window.location.assign('end.html')
 
         }
     }
+
+    
 }
 
 function changeDirection(e) {
@@ -131,4 +137,5 @@ function updateScore(num) {
     score += num;
     scoreText.innerText = score;
 }
+
 

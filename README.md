@@ -15,7 +15,7 @@ N/A
 
 To use this program, navigate to the webpage using the given URL. Upon clicking you will be directed to the home page. You will be presented with two buttons titled, Play Game and High Scores.
 
-Here is a reference image for thte home page:
+Here is a reference image for the home page:
  ![image](https://user-images.githubusercontent.com/112973907/201811659-b83dab45-f895-40ad-b141-787dcb4c4029.png)
 
 

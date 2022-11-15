@@ -14,8 +14,8 @@ N/A
 
 
 To use this program, navigate to the webpage using the given URL. Upon clicking you will be directed to the home page. You will be presented with two buttons titled, Play Game and High Scores.
-
-Here is a reference image for thte home page: ![image](https://user-images.githubusercontent.com/112973907/201811659-b83dab45-f895-40ad-b141-787dcb4c4029.png)
+Here is a reference image for thte home page:
+ ![image](https://user-images.githubusercontent.com/112973907/201811659-b83dab45-f895-40ad-b141-787dcb4c4029.png)
 
 
 Click on the play button to begin the game. Use the arrow keys to navigate your snake on the game board and eat the apples. Once you eat an apple, you will be awarded with 10 points. The more you eat, the higher your score will be. If you touch the edge of the screen or eat your own tail, the game will end and you will be redirected to the end page. At the bottom of the page, there is an option to have scripted music play in the background as you game, with an additional stop button if you choose otherwise, the choice is yours! 
